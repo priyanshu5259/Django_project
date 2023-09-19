@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% extends 'genre/base.html' %}   
+    <title>Piece</title>
+</head>
+<body>    
+    {% block content %}
+    {% for pieceobj in collection.piece_set.all %}
+    
+    <div align="center"> 
+        <img src="{{pieceobj.piececover}}" height="200" height="200">
+        <h2>{{pieceobj.title}}-{{pieceobj.artist}}</a></h2>
+        <h3>{{pieceobj.typ}}</h3>
+        <h3>{{pieceobj.year}}</h3>
+     </div>
+    {% endfor %}
+    {% endblock %}
+
+</body>
+</html>

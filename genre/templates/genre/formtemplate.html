@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    {% extends 'genre/base.html' %}    
+</head>
+<body>
+    {% block content %}
+        <form action="{% url 'userform' %}" method="post">
+            {% csrf_token %}
+            Username:
+            <input type="text" name="username">
+            <br/>
+
+            Email:
+            <input type="text" name="email">
+            <br/>
+
+            Password:
+            <input type="text" name="password">
+            <br/>
+
+            <input type="submit" name="submit">
+        </form>
+    {% endblock %}
+</body>
+</html>
